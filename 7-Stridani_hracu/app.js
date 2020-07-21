@@ -3,14 +3,14 @@
 var aktualniHrac;
 
 function priKliknutiNaBunku(event) {
-    // Nadefinuj prazdnou promennou elementPolicka
-    var znackaPolicka;
+    // Nadefinuj prazdnou promennou bunkaTabulky
+    var bunkaTabulky;
 
-    // Vloz do znackaPolicka bunku <td> z HTML, na kterou se kliknulo
-    znackaPolicka = event.target;
+    // Vloz do promenne bunkaTabulky prvek <td> z HTML, na ktery se kliklo
+    bunkaTabulky = event.target;
 
     // Vloz do vnitrku bunky (tedy <td>SEM</td>) text z promenne aktualniHrac
-    znackaPolicka.textContent = aktualniHrac;
+    bunkaTabulky.textContent = aktualniHrac;
 
     // Vymen hodnotu v aktualniHrac
     if (aktualniHrac === "X") {
