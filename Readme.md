@@ -8,15 +8,15 @@ Demo aplikace pro výuku JavaScriptu.
 
 Level 1 - Zadání
 ----------------
-Obhlédni si výchozí projekt. Je zde webova stranka `index.html`, vizualni styl `style.css`
-a zatim nepouzivany soubor `hra.js`.
+Obhlédni si výchozí projekt. Je zde webová stránka `index.html`, vizuální styl `style.css`
+a zatím nepoužívaný soubor `hra.js`.
 
 
 
 Level 2 - Tabulka
 -----------------
-Priprav si tabulku pro piskvorky. Musi byt alespon 5x5 (muze mit i vetsi pocet sloupcu a radku).
-Tabulka v HTML se zapisuje: 
+Připrav si tabulku pro piškvorky. Musí být alespoň 5x5 (může mít i vetší počet sloupců a řádků).
+Tabulka v HTML se zapisuje takto:
 
 ~~~
 <table>
@@ -34,7 +34,7 @@ Tabulka v HTML se zapisuje:
 </table>
 ~~~
 
-Tabulce pridel `id="deska"`, aby se vykreslovala hezky. Na toto `id` je zacilen vizualni styl.
+Tabulce přiděl `id="deska"`, aby se vykreslovala hezky. Na toto `id` je totiž zacílen vizuální styl.
 
 ~~~
 <table id="deska">
@@ -42,12 +42,12 @@ Tabulce pridel `id="deska"`, aby se vykreslovala hezky. Na toto `id` je zacilen 
 
 
 
-Level 3 - Pridej JavaScript
+Level 3 - Přidej JavaScript
 ---------------------------
-Tabulka je zatim jen zobrazena. Pri kliknuti ani jinak se nic nedeje.
-Pridej do souboru html odkaz na `hra.js` a vsimni si, ze se tabulka vymaze.
-Tento skript navic zajistuje vyhodnoceni pripadneho vitezstvi hrace. Neni ale nutny.
-Pokud ho nepridas, tabulka se proste nebude na zacatku vymazavat a v budoucnu se nebude vyhodnocovat vitezstvi. 
+Tabulka je zatím jen zobrazena. Při kliknutí na ni se nic neděje.
+Přidej do souboru html odkaz na `hra.js` a všimni si, že se tabulka vymaže.
+Tento skript navíc zajišťuje vyhodnocení případného vítězství hráče. Není ale nutný.
+Pokud ho nepřidáš, tabulka se prostě nebude na začátku vymazávat a v budoucnu se nebude vyhodnocovat vítězství.
 
 ~~~
     <table id="deska">
@@ -58,7 +58,7 @@ Pokud ho nepridas, tabulka se proste nebude na zacatku vymazavat a v budoucnu se
 </body>
 ~~~
 
-Dale pridej odkaz na svuj nove zalozeny skript `app.js`, do ktereho budes programovat svou funkcionalitu ty.
+Dále založ nový soubor - skript `app.js` a přidej na něj odkaz do HTML. Do skriptového souboru budeš programovat funkcionalitu piškvorek.
 
 ~~~
     <table id="deska">
@@ -72,9 +72,9 @@ Dale pridej odkaz na svuj nove zalozeny skript `app.js`, do ktereho budes progra
 
 
 
-Level 4 - Pridej reakci na kliknuti na bunku
+Level 4 - Přidej reakci na kliknutí na buňku
 --------------------------------------------
-Pridej do sveho nove zalozeneho skriptu `app.js` funkci:
+Přidej do svého nově založeného skriptu `app.js` funkci:
 
 ~~~
 "use strict";
@@ -84,7 +84,7 @@ function priKliknutiNaBunku(event) {
 }
 ~~~
 
-A tuto funkci aktivuj cele tabulce: 
+A tuto funkci nastav u tabulky:
 
 ~~~
     <table id="deska" onclick="priKliknutiNaBunku(event)">
@@ -94,9 +94,10 @@ A tuto funkci aktivuj cele tabulce:
 
 
 
-Level 5 - Polozeni symbolu hrace do bunky
------------------------------------------
-Ve skriptu `app.js` ve funkci `priKliknutiNaBunku` nahrad `alert` za nastaveni symbolu `X` do bunky, na kterou se kliklo:
+Level 5 - Polož symbol hráče do buňky
+-------------------------------------
+Ve skriptu `app.js` ve funkci `priKliknutiNaBunku` nahraď `alert` novou funkcionalitou.
+Půjde o nastavení symbolu `X` do buňky, na kterou se kliklo:
 
 ~~~
 function priKliknutiNaBunku(event) {
@@ -113,10 +114,10 @@ function priKliknutiNaBunku(event) {
 
 
 
-Level 6 - Zmena hrace
+Level 6 - Změna hráče
 ---------------------
-Pridej zmenu hrace z `X` na `O`. Prozatim jen jednorazovou. Bude tedy treba mit aktualniho hrace v promenne,
-ktera bude menit svuj obsah.
+Přidej změnu hráče z `X` na `O`. Prozatím jen jednorázovou. Bude tedy třeba mít aktuálního hráče v proměnné,
+která bude měnit svůj obsah.
 
 ~~~
 var aktualniHrac = "X";
@@ -126,7 +127,8 @@ function priKliknutiNaBunku(event) {
 }
 ~~~
 
-Dale pouzij tyto prikazy. Ne nutne v tomto poradi:
+Dále použij tyto příkazy:
+
 ~~~
 // Vloz do vnitrku bunky (tedy <td>SEM</td>) text z promenne aktualniHrac
 bunkaTabulky.textContent = aktualniHrac;
@@ -139,12 +141,12 @@ aktualniHrac = "O";
 
 
 
-Level 7 - Pravidelne stridani hracu
+Level 7 - Pravidelné střídání hráčů
 -----------------------------------
-Pridej moznost pravidelneho stridani hracu pomoci podminky. Muzes pouzit nasledujici prikazy:
+Přidej možnost pravidelného střídání hráčů pomocí podmínky. Můžeš použít následující příkazy:
 
 ~~~
-// Vymen hodnotu v aktualniHrac
+// Vymen symbol hrace
 if (aktualniHrac === "X") {
     aktualniHrac = "O";
 } else {
@@ -154,10 +156,11 @@ if (aktualniHrac === "X") {
 
 
 
-Level 8 - Neprepisovani bunek
+Level 8 - Nepřepisování buněk
 -----------------------------
-Program se chova nesikovne v tom, ze kdyz hrac klikne na jiz obsazenou bunku, jeji obsah se i tak prepise.
-To by se dit nemelo. Pridej do programu podminku navic, aby se tomu zamezilo.
+Program se chová nešikovně v tom, že když hráč klikne na již obsazenou buňku,
+její obsah se i tak přepíše.
+To by se dít nemělo. Přidej do programu podmínku navíc, aby se tomu zamezilo.
 
 ~~~
 if (bunkaTabulky.textContent === "") {
