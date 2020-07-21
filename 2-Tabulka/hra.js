@@ -15,6 +15,9 @@ function priNacteniStranky() {
     pocetRadku = document.querySelectorAll("#deska tr").length;
     pocetSloupcu = document.querySelectorAll("#deska tr:first-child > td").length;
 
+    // Vycistime tabulku
+    vymazDesku();
+
     // Bunkam tabulky pridame udalost reagujici na kliknuti mysi
     pridejObsluhuKliknutiNaBunku();
 }
@@ -31,17 +34,16 @@ function vymazDesku() {
 
 // Vsem bunkam tabulky pridame obsluhu udalosti reagujici na kliknuti mysi
 function pridejObsluhuKliknutiNaBunku() {
-  elementDeska.addEventListener("click", zkontrolujVyhru);
+    elementDeska.addEventListener("click", zkontrolujVyhru);
 }
 
 // Vsem bunkam tabulky odebereme obsluhu udalosti reagujici na kliknuti mysi
 function odeberObsluhuKliknutiNaBunku() {
-  elementDeska.removeEventListener("click", zkontrolujVyhru);
+    elementDeska.removeEventListener("click", zkontrolujVyhru);
 }
 
 // Projdeme vsechny bunky tabulky a hledame v nich radu 5 stejnych neprazdnych policek
 function zkontrolujVyhru() {
-  console.log("Kontroluju");
     var vyherce;
     var kamen1;
     var kamen2;
