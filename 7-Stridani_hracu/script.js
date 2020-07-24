@@ -1,6 +1,6 @@
 "use strict";
 
-var aktualniHrac;
+var aktualniHrac = "X";
 
 function priKliknutiNaBunku(event) {
     // Nadefinuj prazdnou promennou bunkaTabulky
