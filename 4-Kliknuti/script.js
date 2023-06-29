@@ -1,5 +1,3 @@
-"use strict";
-
 function priKliknutiNaBunku(event) {
-    alert("Funguje");
+    alert("Funguje")
 }

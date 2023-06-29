@@ -1,21 +1,19 @@
-"use strict";
-
-var aktualniHrac = "X";
+let aktualniHrac = "X"
 
 function priKliknutiNaBunku(event) {
     // Nadefinuj prazdnou promennou bunkaTabulky
-    var bunkaTabulky;
+    let bunkaTabulky;
 
     // Vloz do promenne bunkaTabulky prvek <td> z HTML, na ktery se kliklo
-    bunkaTabulky = event.target;
+    bunkaTabulky = event.target
 
     // Vloz do vnitrku bunky (tedy <td>SEM</td>) text z promenne aktualniHrac
-    bunkaTabulky.textContent = aktualniHrac;
+    bunkaTabulky.textContent = aktualniHrac
 
     // Vymen hodnotu v aktualniHrac
     if (aktualniHrac === "X") {
-        aktualniHrac = "O";
+        aktualniHrac = "O"
     } else {
-        aktualniHrac = "X";
+        aktualniHrac = "X"
     }
 }

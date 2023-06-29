@@ -49,6 +49,7 @@ Přidej do souboru html odkaz na `hra.js` a všimni si, že se tabulka vymaže.
 Tento skript navíc zajišťuje vyhodnocení případného vítězství hráče. Není ale nutný.
 Pokud ho nepřidáš, tabulka se prostě nebude na začátku vymazávat a v budoucnu se nebude vyhodnocovat vítězství.
 
+index.html
 ~~~
     <table id="deska">
        ...
@@ -58,15 +59,21 @@ Pokud ho nepřidáš, tabulka se prostě nebude na začátku vymazávat a v budo
 </body>
 ~~~
 
-Dále založ nový soubor - skript `app.js` a přidej na něj odkaz do HTML. Do skriptového souboru budeš programovat funkcionalitu piškvorek.
+Dále založ nový soubor - skript `script.js` a v HTML se na něj odkaž. Do skriptového souboru budeš programovat funkcionalitu piškvorek.
 
+script.js
+~~~
+alert("Ahoj")
+~~~
+
+index.html
 ~~~
     <table id="deska">
        ...
     </table>
 
     <script src="hra.js"></script>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 ~~~
 
@@ -74,13 +81,11 @@ Dále založ nový soubor - skript `app.js` a přidej na něj odkaz do HTML. Do 
 
 Level 4 - Přidej reakci na kliknutí na buňku
 --------------------------------------------
-Přidej do svého nově založeného skriptu `app.js` funkci:
+Přidej do svého nově založeného skriptu `script.js` funkci:
 
 ~~~
-"use strict";
-
 function priKliknutiNaBunku(event) {
-    alert("Funguje");
+    alert("Funguje")
 }
 ~~~
 
@@ -96,19 +101,19 @@ A tuto funkci nastav u tabulky:
 
 Level 5 - Polož symbol hráče do buňky
 -------------------------------------
-Ve skriptu `app.js` ve funkci `priKliknutiNaBunku` nahraď `alert` novou funkcionalitou.
+Ve skriptu `script.js` ve funkci `priKliknutiNaBunku` nahraď `alert` novou funkcionalitou.
 Půjde o nastavení symbolu `X` do buňky, na kterou se kliklo:
 
 ~~~
 function priKliknutiNaBunku(event) {
     // Nadefinuj prazdnou promennou bunkaTabulky
-    var bunkaTabulky;
+    let bunkaTabulky
 
     // Vloz do promenne bunkaTabulky prvek <td> z HTML, na ktery se kliklo
-    bunkaTabulky = event.target;
+    bunkaTabulky = event.target
 
     // Vloz do vnitrku bunky (tedy <td>SEM</td>) symbol hrace
-    bunkaTabulky.textContent = "X";
+    bunkaTabulky.textContent = "X"
 }
 ~~~
 
@@ -120,7 +125,7 @@ Přidej změnu hráče z `X` na `O`. Prozatím jen jednorázovou. Bude tedy tře
 která bude měnit svůj obsah.
 
 ~~~
-var aktualniHrac = "X";
+let aktualniHrac = "X"
 
 function priKliknutiNaBunku(event) {
     ...
@@ -131,12 +136,12 @@ Dále použij tyto příkazy:
 
 ~~~
 // Vloz do vnitrku bunky (tedy <td>SEM</td>) text z promenne aktualniHrac
-bunkaTabulky.textContent = aktualniHrac;
+bunkaTabulky.textContent = aktualniHrac
 ~~~
 
 ~~~
 // Vymen symbol hrace
-aktualniHrac = "O";
+aktualniHrac = "O"
 ~~~
 
 
@@ -148,9 +153,9 @@ Přidej možnost pravidelného střídání hráčů pomocí podmínky. Můžeš
 ~~~
 // Vymen symbol hrace
 if (aktualniHrac === "X") {
-    aktualniHrac = "O";
+    aktualniHrac = "O"
 } else {
-    aktualniHrac = "X";
+    aktualniHrac = "X"
 }
 ~~~
 
